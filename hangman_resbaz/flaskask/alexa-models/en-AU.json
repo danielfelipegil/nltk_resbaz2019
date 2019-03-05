@@ -1,0 +1,68 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "hangman at resbaz",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "end game",
+                        "stop",
+                        "cancel"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "end game",
+                        "cancel",
+                        "stop"
+                    ]
+                },
+                {
+                    "name": "HangmanIntent",
+                    "slots": [],
+                    "samples": [
+                        "go"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GuessIntent",
+                    "slots": [
+                        {
+                            "name": "country",
+                            "type": "AMAZON.Country"
+                        }
+                    ],
+                    "samples": [
+                        "{country}",
+                        "a for {country}"
+                    ]
+                },
+                {
+                    "name": "NLTKGuessIntent",
+                    "slots": [],
+                    "samples": [
+                        "let the AI play",
+                        "sure",
+                        "yeah",
+                        "yes"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}

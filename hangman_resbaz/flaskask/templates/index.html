@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bs.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+	function refresh() {
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+		  if (this.readyState == 4 && this.status == 200) {
+			var myObj = JSON.parse(this.responseText);
+			document.getElementById("maskedWord").innerHTML = myObj.maskedWord;
+			document.getElementById("livesRemaining").innerHTML = myObj.livesRemaining;
+			document.getElementById("alphabetsUsed").innerHTML = myObj.alphabetsUsed;
+			document.getElementById("word").innerHTML = myObj.word;
+		  }
+		};
+		xmlhttp.open("GET", "../data.json", true);
+		xmlhttp.send();
+	}
+
+	function init() {
+	  refresh()
+	  var int = self.setInterval(function () {
+		refresh()
+	  }, 10);
+	}
+
+    </script>
+</head>
+<body onload="init()" style="overflow-x: hidden">
+<div class="text-center hidden">
+    <img src="https://brandhub.unimelb.edu.au/guidelines/logos/04_Logo_Vertical-Housed.jpg" height="200" width="200">
+</div>
+<div class="container-fluid">
+    <div class="center-block">
+        <div class="col-sm-12 text-center">
+            <h1 style="font-family:Courier New;" class="text-uppercase">Natural Language Analysis With NLTK</h1>
+            <h2>HANGMAN</h2>
+            <div class="alert" style="background-color:rgb(100, 100, 100);color:rgb(256,256,256);">
+                <h5>The word chosen is from the</h5>
+                <a href="https://en.wikipedia.org/wiki/Brown_Corpus"><h4><b style="color:orange;">BROWN CORPUS</b></h4>
+                </a>
+                <h5>You can speak the name of a country or city to start guessing</h5>
+            </div>
+            <h1></h1>
+        </div>
+    </div>
+    <div class="col-xs-12 text-center jumbotron" style="background-color:rgb(10, 100, 200);">
+        <h1><span id="maskedWord" style="color:white; font-size: 200%;"></span></h1>
+    </div>
+</div>
+<div class="text-center" style="font-family:Courier New;">
+    <h3>LIVES REMAINING : <b><span id="livesRemaining"></span></b> | ALPHABETS USED : <b><span
+            id="alphabetsUsed"></span></b></h3>
+</div>
+<div class="col-xs-12 text-center" style="background-color:grey;">
+    <h2><b><h3 style="color:white;" id="word"></h3></b></h2>
+</div>
+</body>
+</html>

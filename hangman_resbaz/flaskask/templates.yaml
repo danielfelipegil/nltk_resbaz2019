@@ -1,0 +1,17 @@
+welcome: Welcome to Hangman, let the guessing games begin. Say GO to start.
+
+correct: Correct, the letter {{letter}} is in the word. {{attempts}} attempts remain.
+
+incorrect: Sorry, the letter '{{letter}}' does not exist in the word, try again. {{attempts}} attempts remain.
+
+win: Good job! Hip Hip Hurray. The word was {{quest}}. Do you want the NLTK AI to play?
+
+lose: Sorry, you were not able to guess the word in {{attempts}} attempts. Game ends now.
+
+attempts: 10
+
+length_hint: The word is of {{length}} letters from the Brown repository, start guessing. You have {{attempts}} lives to start with. Start by saying something like 'A' for Australia or just the name of the country
+
+wrong_country: Sorry, {{country}} is not the name of a country, please retry
+
+wrong_GO: Wrong keyword spoken, say CANCEL to exit or GO to proceed with playing the game
